@@ -1,14 +1,14 @@
 spring:
   profiles:
-    active: dev
+    active: dev7001
 
 ---
 server:
   port: 7001
 spring:
-  profiles: dev
+  profiles: dev7001
   application:
-    name: zccenter-dev
+    name: zccenter-dev7001
 eureka:
   instance:
     hostname: localhost   #Eureka服务端的名称
@@ -24,9 +24,9 @@ eureka:
 server:
   port: 7002
 spring:
-  profiles: test
+  profiles: dev7002
   application:
-    name: zccenter-test
+    name: zccenter-dev7002
 eureka:
   instance:
     hostname: localhost   #Eureka服务端的名称
