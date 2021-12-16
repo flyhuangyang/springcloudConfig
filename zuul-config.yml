@@ -20,5 +20,5 @@ zuul:
     consumer:
       serviceId: consumer
       path: /consumer/**
-  ignored-services: "*"
+#   ignored-services: "*"
   prefix: /hy
