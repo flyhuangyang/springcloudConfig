@@ -1,0 +1,37 @@
+spring:
+  profiles:
+    active: dev
+
+---
+server:
+  port: 7001
+spring:
+  profiles: dev
+  application:
+    name: dev-zccenter7001
+eureka:
+  instance:
+    hostname: localhost   #Eureka服务端的名称
+  client:
+    register-with-eureka: false #是否向eureka注册中心注册自己，这里是eureka注册中心，所以不用注册自己
+    fetch-registry: false      #为false表示自己是注册中心
+    service-url:   #监控页面
+      defaultZone: http://localhost:7002/eureka  #单个的换此次值为自己的ip和端口，集群的话值为其他服务的ip和端口，逗号分隔
+#  server:
+#    enable-self-preservation: false   #关闭eureka的自我保护机制
+
+---
+server:
+  port: 7002
+spring:
+  profiles: test
+  application:
+    name: test-zccenter7002
+eureka:
+  instance:
+    hostname: localhost   #Eureka服务端的名称
+  client:
+    register-with-eureka: false #是否向eureka注册中心注册自己，这里是eureka注册中心，所以不用注册自己
+    fetch-registry: false      #为false表示自己是注册中心
+    service-url:   #监控页面
+      defaultZone: http://localhost:7002/eureka
