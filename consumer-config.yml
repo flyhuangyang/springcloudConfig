@@ -40,7 +40,7 @@ hystrix:
             timeoutInMilliseconds: 2000
 
 server:
-  port: 8005
+  port: 8001
 
 # 暴露监控端点
 management:
