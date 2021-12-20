@@ -18,10 +18,17 @@ spring:
         max-concurrency: 10
         retry:
           enabled: true
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka,http://localhost:7003/eureka
+# eureka:
+#   client:
+#     service-url:
+#       defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka,http://localhost:7003/eureka
+
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
 
 hystrix:
   command:
@@ -36,7 +43,15 @@ hystrix:
           thread:
             timeoutInMilliseconds: 2000
 
+server:
+  port: 8001
 
+# 暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
 
 
